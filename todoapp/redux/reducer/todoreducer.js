@@ -20,11 +20,27 @@ export const todoReducer = (state = initialState, action) => {
             }
                     
         case Remove_Todo:
-            let newList = state.list.filter((newItem) => newItem.id !== action.id)
+    /*         let newList = state.list.filter((newItem) => newItem.id !== action.id)
             return {
                 ...state,
                 list: newList
+            } */
+            const newItemsArr1 = state.list.map((o) => {
+                if (o.id == action.payload.id) {
+                  return {
+                    ...o,
+                    deleted: !o.deleted,
+                  };
+                }
+                return o;
+              });
+             
+               
+            return {
+                ...state,
+                list:  newItemsArr1
             }
+
 
         case Check_Todo:
             console.log("Hii", state.list)

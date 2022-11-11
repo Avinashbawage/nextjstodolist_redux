@@ -15,8 +15,15 @@ export const addTodo = (data) => {
 
 export const removeTodo = (id) => {
     return {
-        type: Remove_Todo,
+   /*      type: Remove_Todo,
         id,
+        deleted:false */
+
+        type: Remove_Todo,
+        payload: {          
+           id,
+       
+        }
    
     }
 }
