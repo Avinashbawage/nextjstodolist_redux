@@ -21,8 +21,9 @@ const Sidebar = () => {
               {index + 1} &nbsp;
               
               &nbsp;
-              {item.data} &nbsp; {console.log("All items", item)}
-             
+              {item.data} &nbsp; {item.timing.toLocaleString() }{console.log("All items", item)}
+
+              
             </li>
           ))}
     

@@ -8,6 +8,7 @@ export const addTodo = (data) => {
         payload: {
             data: data,
             id: new Date().getTime().toString(),
+            timing:" ",
        
         }
     }
@@ -15,13 +16,13 @@ export const addTodo = (data) => {
 
 export const removeTodo = (id) => {
     return {
-   /*      type: Remove_Todo,
-        id,
-        deleted:false */
+ 
 
         type: Remove_Todo,
         payload: {          
            id,
+           timing: new Date(),
+
        
         }
    
